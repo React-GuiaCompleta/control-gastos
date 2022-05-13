@@ -3,7 +3,7 @@ import Header from './components/Header'
 
 function App() {
   const [presupuesto, setPresupuesto] = useState(0)
-  // si presupuesto es valido muestra en la pantalla de gastos 
+  // si presupuesto es true lo muestra en la pantalla de gastos 
   const [isValidPresupuesto, setisValidPresupuesto] = useState (false)
 
   return (
