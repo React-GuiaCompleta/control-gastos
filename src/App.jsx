@@ -9,9 +9,17 @@ function App() {
   const [isValidPresupuesto, setisValidPresupuesto] = useState(false)
   // false para que no se muestre al inicio
   const [modal, setModal] = useState(false)
-  
+  // Paso 3
+  // Cuanto esté en true, agrega la clase .formulario.animar
+  const [animarModal, setAnimarModal] = useState(false)
+
   const handleNuevoGasto = () => {
     setModal(true)
+    // Paso 2
+    setTimeout(() => {
+      // Paso 4
+      setAnimarModal(true)
+    }, 500)
   }
 
   return (
@@ -25,6 +33,7 @@ function App() {
       {/* Si es true ejecuta */}
       {isValidPresupuesto && (
         <div className='nuevo-gasto'>
+          {/* Boton + para agregar */}
           <img
             src={IconoNuevoGasto}
             alt="icono nuevo gasto"
@@ -34,8 +43,11 @@ function App() {
       )}
 
       {modal && <Modal
-      //Paso 3
         setModal={setModal}
+        // Paso 3.1
+        animarModal={animarModal}
+        // Paso 7
+        setAnimarModal={setAnimarModal}
       />}
     </div>
   )

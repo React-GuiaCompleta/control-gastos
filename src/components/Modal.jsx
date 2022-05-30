@@ -1,10 +1,18 @@
 import React from 'react'
 import CerrarBtn from '../img/cerrar.svg'
 
-const Modal = ({setModal}) => {
-    //paso 2
+// Paso 5 animarModal
+// Paso 8 setAnimarModal
+const Modal = ({ setModal, animarModal, setAnimarModal }) => {
+
     const ocultarModal = () => {
-        setModal(false)
+        // primero se desaparece la animacion y luego se cierra el modal
+        setAnimarModal(false)
+        // paso 9
+        setTimeout(() => {
+            setModal(false)
+        }, 500)
+
     }
     return (
         <div className='modal'>
@@ -12,12 +20,19 @@ const Modal = ({setModal}) => {
                 <img
                     src={CerrarBtn}
                     alt="cerrar modal"
-                    // Ocultando modal paso 1
                     onClick={ocultarModal}
                 />
             </div>
+            {/* // Paso 1: creamos el form */}
+            {/* Paso 6 condicion de animarModal 
+            Si animarModal es true entonces agrega la clase de animar 
+            con opacity 1 sino no agrega otra clase*/}
+            <form className={`formulario ${animarModal ? "animar" : 'cerrar'}`}>
+                <legend>Nuevo gasto</legend>
+            </form>
         </div>
     )
 }
 
 export default Modal
+

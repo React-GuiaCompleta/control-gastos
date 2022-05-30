@@ -358,6 +358,7 @@ main {
     transition-property: all;
     transition-duration: 300ms;
     transition-timing-function: ease-in;
+    /* no se ve nada */
     opacity: 0;
 }
 .modal label {
@@ -369,6 +370,7 @@ body .modal {
 
 .modal .formulario.animar {
     position: relative;
+    /* Aparece */
     opacity: 1;
 }
 
