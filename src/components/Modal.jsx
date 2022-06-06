@@ -1,14 +1,11 @@
 import React from 'react'
 import CerrarBtn from '../img/cerrar.svg'
 
-// Paso 5 animarModal
-// Paso 8 setAnimarModal
+
 const Modal = ({ setModal, animarModal, setAnimarModal }) => {
 
     const ocultarModal = () => {
-        // primero se desaparece la animacion y luego se cierra el modal
         setAnimarModal(false)
-        // paso 9
         setTimeout(() => {
             setModal(false)
         }, 500)
@@ -23,12 +20,43 @@ const Modal = ({ setModal, animarModal, setAnimarModal }) => {
                     onClick={ocultarModal}
                 />
             </div>
-            {/* // Paso 1: creamos el form */}
-            {/* Paso 6 condicion de animarModal 
-            Si animarModal es true entonces agrega la clase de animar 
-            con opacity 1 sino no agrega otra clase*/}
+
             <form className={`formulario ${animarModal ? "animar" : 'cerrar'}`}>
                 <legend>Nuevo gasto</legend>
+
+                <div className='campo'>
+                    <label htmlFor='nombre'>Nombre</label>
+                    <input
+                        id='nombre'
+                        type='text'
+                        placeholder='Añade el nombre del gasto'
+                    />
+                </div>
+                <div className='campo'>
+                    <label htmlFor='cantidad'>Cantidad</label>
+                    <input
+                        id='cantidad'
+                        type='text'
+                        placeholder='Añade la cantidad del gasto ej. 300'
+                    />
+                </div>
+                <div className='campo'>
+                    <label htmlFor='categoria'>Categoria</label>
+
+                    <select id="categoria">
+                        <option value="">-- Seleccione --</option>
+                        <option value="ahorro">-- Ahorro --</option>
+                        <option value="comida">-- Comida --</option>
+                        <option value="casa">-- Casa --</option>
+                        <option value="salud">-- Salud --</option>
+                        <option value="suscripciones">-- Suscripciones --</option>
+                    </select>
+                </div>
+
+                <input
+                    type="submit"
+                    value="Añadir gasto"
+                />
             </form>
         </div>
     )

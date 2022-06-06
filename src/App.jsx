@@ -9,15 +9,11 @@ function App() {
   const [isValidPresupuesto, setisValidPresupuesto] = useState(false)
   // false para que no se muestre al inicio
   const [modal, setModal] = useState(false)
-  // Paso 3
-  // Cuanto esté en true, agrega la clase .formulario.animar
   const [animarModal, setAnimarModal] = useState(false)
 
   const handleNuevoGasto = () => {
     setModal(true)
-    // Paso 2
     setTimeout(() => {
-      // Paso 4
       setAnimarModal(true)
     }, 500)
   }
@@ -44,9 +40,7 @@ function App() {
 
       {modal && <Modal
         setModal={setModal}
-        // Paso 3.1
         animarModal={animarModal}
-        // Paso 7
         setAnimarModal={setAnimarModal}
       />}
     </div>
